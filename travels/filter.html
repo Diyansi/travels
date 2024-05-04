@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interest filter</title>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Namdhinggo:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Protest+Riot&display=swap" rel="stylesheet">
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script> 
+
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       
+        .selected-image {
+            height: 370px;
+            width: 400px;
+            margin: 25px;
+            
+        }
+        #d1{
+            text-align: center;
+            background: url("flite.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        .lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    font-style: normal;
+  }
+ 
+    #d2{
+        font-size: 40px;
+        background: url("flite.jpg");
+        text-align: center;
+
+    }
+    #d3{
+        background-color: black;
+        font-size: 20px;
+
+    }
+    button {
+
+            width: 700px;
+            --green: #1BFD9C;
+            font-size: 15px;
+            padding: 0.7em 2.7em;
+            letter-spacing: 0.06em;
+            position: relative;
+            font-family: inherit;
+            border-radius: 0.6em;
+            overflow: hidden;
+            transition: all 0.3s;
+            line-height: 1.4em;
+            border: 2px solid var(--green);
+            background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+            color: var(--green);
+            box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+          }
+          
+          button:hover {
+            color: #82ffc9;
+            box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+          }
+          
+          button:before {
+            content: "";
+            position: absolute;
+            left: -4em;
+            width: 4em;
+            height: 100%;
+            top: 0;
+            transition: transform .4s ease-in-out;
+            background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+          }
+          
+          button:hover:before {
+            transform: translateX(55em);
+          }
+          button:hover {
+  background-color: #2e88c0;
+  box-shadow: #5eb5f4 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+button:active {
+  transform: scale(1.025);
+}
+
+span{
+    color: #5eb5f4;
+    font-family: 'Courier New', Courier, monospace;
+}
+        
+
+    </style>
+</head>
+<body>
+
+    <br><br>
+    <h1 class="lobster-regular" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="900" id="d1">Selected Images Are Here:</h1>
+<div id="selectedImages"></div>
+
+<h5 class="lobster-regular" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="900" id="d2">Depends On Your Interest selecte Suitable Option:</h5><br>
+
+
+<div class="row d-flex justify-content-around">
+
+    <div class="col-sm-6"> <button class="lobster-regular jkl" data-aos="fade-up"data-aos-duration="3000"  data-aos-delay="100" id="d3"> <span>ARTICLES</span>  Or <span>BLOG</span> Based On Your Interest:</button></div>
+    <div class="col-sm-6"><button class="lobster-regular ghi" data-aos="fade-up"data-aos-duration="3000"  id="d3">Get <span>INFORMATION</span> Bsed On Your Interest:</button></div></div><br>
+    <div class="row d-flex justify-content-around">
+    <div class="col-sm-6">  <button class="lobster-regular def" data-aos="fade-up"data-aos-duration="3000"  id="d3"><span>BOOKING</span> Flite Based For The Trip: </button></div>
+    <div class="col-sm-6">  <button class="lobster-regular abc" data-aos="fade-up"data-aos-duration="3000"  id="d3" onclick="my()">Watch The <span>MAPS</span> Of Those Places:</button></div>
+
+</div>
+
+<script>
+    // Retrieve selected image URLs from session storage
+    var selectedUrls = JSON.parse(sessionStorage.getItem('selectedImagesUrls'));
+    
+    // Display selected images
+    var selectedImagesDiv = document.getElementById('selectedImages');
+    selectedUrls.forEach(url => {
+        var image = document.createElement('img');
+        image.src = url;
+        image.classList.add('selected-image');
+        selectedImagesDiv.appendChild(image);
+    });
+
+    function my(){
+        window.location.href = "c1map.html";
+    }
+    
+   
+</script>
+
+<script>
+    ScrollReveal({
+        reset: true,
+       distance: '60px',
+       duration: 2500,
+       delay: 400,
+       });
+
+    //    ScrollReveal().reveal('#a', { origin: 'left',duration: 600});
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+      AOS.init();    
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,201 @@
+* { 
+    margin: 0;
+    padding: 0;
+     font-family: "poppins", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+.container{
+    background-position: center;
+    background-size: cover;
+}
+#img{
+    background: url("flite.jpg") no-repeat;
+        background-position: center;
+        background-size: cover; 
+}
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    font-style: normal;
+  }
+  button{
+    border-radius: 7px;
+    padding: 5px;
+    background-color: rgb(109, 176, 224);
+  }
+  
+#a{
+    background: url("ad1.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+#b{
+    background: url("in1.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+#c{
+    background: url("ad3.jpg") no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+#d{
+    background: url("ad2.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#e{
+    background: url("nat3.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#f{
+    background: url("uni1.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#g{
+    background: url("uni2.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#h{
+    background: url("nat1.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+#i{
+    background: url("p1.jpeg") no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+#j{
+    background: url("pe1.jpeg") no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+#k{
+    background: url("nat2.jpg") no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+#l{
+    background: url("nat3.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#m{
+    background: url("nat4.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#n{
+    background: url("uni3.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#o{
+    background: url("pea1.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#p{
+    background: url("pe2.jpeg") no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+#q{
+    background: url("pea3.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+#s{
+    background: url("prak1.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#t{
+    background: url("uni1.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#u{
+    background: url("uni2.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+#v{
+    background: url("pea2.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+#w{
+    background: url("uni4.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+#x{
+    background: url("uni5.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+#y{
+    background: url("ad1.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+#z{
+    background: url("nat1.jpg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+#y1{
+    background: url("in2.jpeg") no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+#z1{
+    background: url("pea1.jpg") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+.selected {
+/* border: 3px solid rgb(28, 109, 167); */
+box-shadow: 1px 1px 2px black, 0 0 25px rgb(3, 143, 236), 0 0 5px rgb(59, 59, 159);
+}

@@ -1,0 +1,51 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clock</title>
+</head>
+<body>
+
+<span id="clockBox"></span><br><br>
+<button onclick="start_clock()">Start</button>
+<button onclick="stop_clock()">Stop</button>
+
+<script>
+let timer = null;
+let timer_running = false;
+
+function start_clock() {
+    if (!timer_running) {
+        update_clock();
+        timer = setTimeout(start_clock, 500);
+        timer_running = true;
+    }
+}
+
+function stop_clock() {
+    if (timer_running) {
+        clearTimeout(timer);
+        timer_running = false;
+    }
+}
+
+function update_clock() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const formatted_time = `${hours % 12 || 12}:${padZero(minutes)}:${padZero(seconds)} ${ampm}`;
+    const clockBox = document.getElementById("clockBox");
+    clockBox.innerHTML = formatted_time;
+}
+
+function padZero(num) {
+    return num < 10 ? '0' + num : num;
+}
+setInterval(update_clock, 1000);
+</script>
+
+</body>
+</html> -->

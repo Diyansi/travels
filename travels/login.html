@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Namdhinggo:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Protest+Riot&display=swap" rel="stylesheet">
+    <style>
+        * { 
+    margin: 0;
+    padding: 0;
+     font-family: "poppins", sans-serif;
+}
+
+
+body{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("flite.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+          .box{
+            width: 500px;
+            height: 550px;
+            border: 2px solid  #625d5d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            background: transparent;
+          }
+          .lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+          h2{
+            font-size: 2em;
+            color: #326d9e;
+            text-align: center;
+          }
+
+      .inputbox{
+        position: relative;
+        margin: 30px 0;
+        width: 300px;
+        border-bottom: 2px solid #326d9e;
+      }
+      .inputbox label{
+        position: absolute ;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        color: #326d9e;
+        font-size: 1em ;
+        pointer-events: none;
+        transition: 0.5s;
+      } 
+
+
+      .inputbox input{
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        padding: 0 35px 0 5px;
+        color: #000;
+      }
+      .inputbox ion-icon{
+        position: absolute;
+        right: 8px;
+        color: #fff;
+        font-size: 1.2em;
+        top: 20px;
+      }
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #326d9e;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.forget{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 15px;
+    font-size: 0.9em;
+    color: #326d9e;
+}
+
+.forget label:nth-child(2){
+    order: 1;
+}
+
+.forget label{
+    display: flex;
+    align-items: center;
+}
+
+.forget label input[ type="checkbox"]{
+    margin-right: 6px
+}
+
+.forget label a {
+    color: #326d9e;
+    text-decoration: none;
+}
+
+.forget label a:hover{
+    text-decoration: underline;
+}
+
+.register {
+    font-size: 0.9em;
+    color: #326d9e;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register p a{
+    text-decoration: none;
+    color: #326d9e;
+    font-weight: 800;
+}
+
+.register p a:hover{
+    text-decoration: underline;
+}
+
+
+
+    </style>
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script> -->
+
+</head>
+<body>
+
+    <div class="box">
+
+        <form action="" id="mf">
+
+            <hr><h2 class="lobster-regular">Travelers Login Form </h2><hr><br><br>
+
+            <div class="inputbox">
+              <input type="email" name="" id="e" required>
+              <label for="e" id="e1">Email:</label>
+          </div>
+          
+
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="" id="p" required>
+                <label for="p" id="p1">Password:</label>
+            </div>
+
+            <div class="forget">
+                <label for="">
+                    <input type="checkbox">Remember me
+                </label>
+                <label for="">
+                    Forget Password
+                </label>
+            </div>
+            <button class="lobster-regular" type="submit"> Log In</button>
+            
+
+            <div class="register">
+                <p>Don't have an account ? <a href="" class="lobster-regular">register</a></p>
+            </div>
+        </form>
+      
+        
+    </div>
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const inputField = document.getElementById('e');
+    const label = document.getElementById('e1');
+
+    inputField.addEventListener('focus', function() {
+        label.style.top = '-5px';
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const inputField = document.getElementById('p');
+    const label = document.getElementById('p1');
+
+    inputField.addEventListener('focus', function() {
+        label.style.top = '-5px';
+    });
+});
+
+
+
+const form = document.getElementById('mf');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const pass = document.getElementById('p').value;
+  const email = document.getElementById('e').value;
+
+  // Validation logic
+  let isValid = true;
+  if (pass === '') {
+    alert('Please enter your password');
+    isValid = false;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('Please enter a valid email address');
+    isValid = false;
+  }
+
+  if (isValid) {
+    window.location.href = 'index.html'; // Replace with your next page URL
+  }
+});
+
+    
+    </script>
+</body>
+</html>

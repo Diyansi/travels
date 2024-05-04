@@ -1,0 +1,301 @@
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Selection</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        #v, #w, #x ,#a {
+        background: url("ad1.jpg");
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    }
+
+    .selected {
+    border: 3px solid blue; /* Change border color for selected images */
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 uniq" id="w"  onclick="toggleSelection('w')"></div><br>
+            <div class="col-sm-4 ps"  id="v" onclick="toggleSelection('v')"></div><br>
+            <div class="col-sm-4 ps1"  id="x" onclick="toggleSelection('x')"></div><br>
+            <div class="col-sm-4 ps2"  id="a" onclick="toggleSelection('a')"></div><br>
+
+        </div>
+    </div>
+<button class="lobster-regular" style="font-size: 20px;" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="900" onclick="validateImage()">Select Pictures</button>
+
+<script>
+    function toggleSelection(id) {
+        var selectedImage = document.getElementById(id);
+        selectedImage.classList.toggle('selected');
+    }
+
+    function validateImage() {
+        var selectedImages = document.querySelectorAll('.selected');
+        
+        // Check if exactly 3 images are selected
+        if (selectedImages.length !== 3) {
+            alert("Please select exactly 3 images.");
+        } else {
+            // Store selected image URLs in session storage
+            var selectedUrls = Array.from(selectedImages).map(image => getBackgroundImageUrl(image));
+            sessionStorage.setItem('selectedImagesUrls', JSON.stringify(selectedUrls));
+            
+            // Redirect to the next page
+            window.location.href = "practice1.html";
+        }
+    }
+    
+    function getBackgroundImageUrl(element) {
+        var backgroundImage = window.getComputedStyle(element).backgroundImage;
+        return backgroundImage.slice(4, -1).replace(/"/g, "");
+    }
+</script>
+
+</body>
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #v, #w, #x ,#a {
+        background: url("ad1.jpg");
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    }
+
+    .selected {
+    border: 3px solid blue; /* Change border color for selected images */
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 uniq" id="w"  onclick="toggleSelection('w')"></div><br>
+            <div class="col-sm-4 ps"  id="v" onclick="toggleSelection('v')"></div><br>
+            <div class="col-sm-4 ps1"  id="x" onclick="toggleSelection('x')"></div><br>
+            <div class="col-sm-4 ps2"  id="a" onclick="toggleSelection('a')"></div><br>
+
+        </div>
+    </div>
+<button class="lobster-regular" style="font-size: 20px;" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="900" onclick="validateImage()">Select Pictures</button>
+
+<script>
+    function toggleSelection(id) {
+        var selectedImage = document.getElementById(id);
+        selectedImage.classList.toggle('selected');
+    }
+
+    function validateImage() {
+        var selectedImages = document.querySelectorAll('.selected');
+        
+        // Check if exactly 3 images are selected
+        if (selectedImages.length !== 3) {
+            alert("Please select exactly 3 images.");
+        } else {
+            // Store selected image URLs in session storage
+            var selectedUrls = Array.from(selectedImages).map(image => getBackgroundImageUrl(image));
+            sessionStorage.setItem('selectedImagesUrls', JSON.stringify(selectedUrls));
+            
+            // Redirect to the next page
+            window.location.href = "practice1.html";
+        }
+    }
+    
+    function getBackgroundImageUrl(element) {
+        var backgroundImage = window.getComputedStyle(element).backgroundImage;
+        return backgroundImage.slice(4, -1).replace(/"/g, "");
+    }
+</script>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #w, #v, #x, #a {
+            background: url("ad1.jpg");
+            background-size: cover;
+            height: 150px;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .selected {
+            border: 3px solid blue; /* Change border color for selected images */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 uniq" id="w" onclick="toggleSelection('w')"></div>
+        <div class="col-sm-4 ps" id="v" onclick="toggleSelection('v')"></div>
+        <div class="col-sm-4 ps1" id="x" onclick="toggleSelection('x')"></div>
+        <div class="col-sm-4 ps2" id="a" onclick="toggleSelection('a')"></div>
+    </div>
+</div>
+
+<button class="lobster-regular" style="font-size: 20px;" onclick="validateImage()">Select Pictures</button>
+
+<script>
+    function toggleSelection(id) {
+        var selectedImage = document.getElementById(id);
+        selectedImage.classList.toggle('selected');
+    }
+
+    function validateImage() {
+        var selectedImages = document.querySelectorAll('.selected');
+
+        // Check if exactly 3 images are selected
+        if (selectedImages.length !== 3) {
+            alert("Please select exactly 3 images.");
+        } else {
+            // Store selected image URLs and class names in session storage
+            var selectedData = Array.from(selectedImages).map(image => ({
+                url: getBackgroundImageUrl(image),
+                className: image.className
+            }));
+            sessionStorage.setItem('selectedImagesData', JSON.stringify(selectedData));
+
+            // Redirect to the next page
+            window.location.href = "practice1.html";
+        }
+    }
+
+    function getBackgroundImageUrl(element) {
+        var backgroundImage = window.getComputedStyle(element).backgroundImage;
+        return backgroundImage.slice(4, -1).replace(/"/g, "");
+    }
+</script>
+
+</body>
+</html> -->
+
+<!-- 
+<html>
+    <head><title>h</title>
+
+
+    <style>
+.button-73 {
+  appearance: none;
+  background-color: #a1c1ec;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #408ab1 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-73:hover {
+  background-color: #2e88c0;
+  box-shadow: #5eb5f4 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+</style>
+</head>
+<body>
+<button class="button-73" role="button">Button 73</button>
+
+    </body>
+</html> -->
+
+
+<!-- First Page: Select Images -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include necessary CSS and JS files -->
+</head>
+<body>
+    <!-- Your image selection HTML code -->
+    <div id="selectedImages"></div>
+
+    <!-- Store selected image classes in session storage -->
+    <script>
+        var selectedImageClasses = []; // Store selected image classes
+
+        function toggleSelection(className) {
+            var index = selectedImageClasses.indexOf(className);
+            if (index === -1) {
+                selectedImageClasses.push(className);
+            } else {
+                selectedImageClasses.splice(index, 1);
+            }
+        }
+
+        function validateImage() {
+            // Validate selection and store in session storage
+            sessionStorage.setItem('selectedImageClasses', JSON.stringify(selectedImageClasses));
+            // Redirect to the second page
+            window.location.href = 'second_page.html';
+        }
+    </script>
+</body>
+</html>
+
